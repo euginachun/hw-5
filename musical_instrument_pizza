@@ -1,8 +1,8 @@
-var freqA = 174;
-var freqS = 196;
-var freqS = 196;
-var freqD = 220;
-var freqF = 250;
+var freqA = 261.6;
+var freqS = 293.66;
+var freqS = 329.63;
+var freqD = 349.23;
+var freqF = 392;
 
 var oscA, oscS, oscD, oscF;
 
@@ -12,108 +12,108 @@ var playingD = false;
 var playingF = false;
 
 function setup() {
-  createCanvas(400, 400);
-  backgroundColor = color(255);
-  textAlign(CENTER);
+  createCanvas(400, 400);
+  backgroundColor = color(255);
+  textAlign(CENTER);
 
-  oscA = new p5.Oscillator();
-  oscA.setType('triangle');
-  oscA.freq(freqA);
-  oscA.amp(2, 1);
-  // oscA.start();
+  oscA = new p5.Oscillator();
+  oscA.setType('triangle');
+  oscA.freq(freqA);
+  oscA.amp(2, 1);
+  // oscA.start();
 
-  oscS = new p5.Oscillator();
-  oscS.setType('triangle');
-  oscS.freq(freqS);
-  oscS.amp(2, 1);
-  // oscS.start();
+  oscS = new p5.Oscillator();
+  oscS.setType('triangle');
+  oscS.freq(freqS);
+  oscS.amp(2, 1);
+  // oscS.start();
 
-  oscD = new p5.Oscillator();
-  oscD.setType('triangle');
-  oscD.freq(freqD);
-  oscD.amp(2, 1);
-  // oscD.start();
+  oscD = new p5.Oscillator();
+  oscD.setType('triangle');
+  oscD.freq(freqD);
+  oscD.amp(2, 1);
+  // oscD.start();
 
-  oscF = new p5.Oscillator();
-  oscF.setType('triangle');
-  oscF.freq(freqF);
-  oscF.amp(2, 1);
-  // oscF.start();
+  oscF = new p5.Oscillator();
+  oscF.setType('triangle');
+  oscF.freq(freqF);
+  oscF.amp(2, 1);
+  // oscF.start();
 }
 
 function draw() {
-  if (playing) {
-    background(255);
-  } else {
-    background(255);
-  }
-  text('click here,\nthen press A/S/D/F\n keys to play', width / 2, 40);
+  if (playing) {
+    background(255);
+  } else {
+    background(255);
+  }
+  text('click here,\nthen press A/S/D/F\n keys to play', width / 2, 40);
 }
 
 function keyPressed() {
-  print('got key press for ', key);
-  // var osc;
-  if (key == 'A') {
-    if (!playingA) oscA.start();
-    else oscA.stop();
-    playingA = !playingA;
-  } else if (key == 'S') {
-    if (!playingS) oscS.start();
-    else oscS.stop();
-    playingS = !playingS;
-  } else if (key == 'D') {
-    if (!playingD) oscD.start();
-    else oscD.stop();
-    playingD = !playingD;
-  } else if (key == 'F') {
-    if (!playingF) oscF.start();
-    else oscF.stop();
-    playingF = !playingF;
-  } else if (key == 'M') {
-    oscA.stop();
-    oscS.stop();
-    oscD.stop();
-    oscF.stop();
-  }
+  print('got key press for ', key);
+  // var osc;
+  if (key == 'A') {
+    if (!playingA) oscA.start();
+    else oscA.stop();
+    playingA = !playingA;
+  } else if (key == 'S') {
+    if (!playingS) oscS.start();
+    else oscS.stop();
+    playingS = !playingS;
+  } else if (key == 'D') {
+    if (!playingD) oscD.start();
+    else oscD.stop();
+    playingD = !playingD;
+  } else if (key == 'F') {
+    if (!playingF) oscF.start();
+    else oscF.stop();
+    playingF = !playingF;
+  } else if (key == 'M') {
+    oscA.stop();
+    oscS.stop();
+    oscD.stop();
+    oscF.stop();
+  }
 }
 
 function draw() {
-  background(255, 160, 122);
-  fill('beige');
-  if (playingA) {
-    ellipse(200, 200, 340);
-  }
-  fill(218, 165, 32, 50);
-  if (playingS) {
-    ellipse(200, 200, 290);
-  }
-  fill(178, 34, 34);
-  if (playingD) {
-    ellipse(200, 100, 30);
-    ellipse(200, 160, 30);
-    ellipse(200, 220, 30);
-    ellipse(200, 280, 30);
-    ellipse(150, 200, 30);
-    ellipse(100, 220, 30);
-    ellipse(290, 280, 30);
-    ellipse(250, 120, 30);
-    ellipse(100, 220, 30);
-    ellipse(290, 280, 30);
-    ellipse(250, 120, 30);
-    ellipse(300, 220, 30);
-    ellipse(120, 120, 30);
-    ellipse(130, 280, 30);
-    ellipse(240, 310, 30);
-    ellipse(280, 180, 30);
-    ellipse(240, 240, 30);
-  }
+  background(255, 160, 122);
+  fill('beige');
+  if (playingA) {
+    ellipse(200, 200, 340);
+  }
+  fill(218, 165, 32, 50);
+  if (playingS) {
+    ellipse(200, 200, 290);
+  }
+  fill(178, 34, 34);
+  if (playingD) {
+    ellipse(200, 100, 30);
+    ellipse(200, 160, 30);
+    ellipse(200, 220, 30);
+    ellipse(200, 280, 30);
+    ellipse(150, 200, 30);
+    ellipse(100, 220, 30);
+    ellipse(290, 280, 30);
+    ellipse(250, 120, 30);
+    ellipse(100, 220, 30);
+    ellipse(290, 280, 30);
+    ellipse(250, 120, 30);
+    ellipse(300, 220, 30);
+    ellipse(120, 120, 30);
+    ellipse(130, 280, 30);
+    ellipse(240, 310, 30);
+    ellipse(280, 180, 30);
+    ellipse(240, 240, 30);
+  }
 
-  fill(255, 160, 122);
-  stroke(255, 160, 122);
-  if (playingF) {
-    line(50, 50, 400, 400);
-    line(200, 20, 200, 400);
-    line(320, 70, 20, 400);
-    line(10, 200, 400, 200);
-  }
+  fill(255, 160, 122);
+  stroke(255, 160, 122);
+  if (playingF) {
+    line(50, 50, 400, 400);
+    line(200, 20, 200, 400);
+    line(320, 70, 20, 400);
+    line(10, 200, 400, 200);
+  }
 }
